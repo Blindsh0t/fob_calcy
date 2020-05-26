@@ -96,21 +96,21 @@ def printing():
     
 
     def niceLooks(a, b, c):
-        line = ''.ljust(5) + a.ljust(25) + b + c
+        line = ''.ljust(5) + a.ljust(25) + b + format(c)
         return line 
     print(today)
     print(niceLooks(mineral, '% ', grade))
-    print(niceLooks('Todays Rate', '$ ', format(rate)))
-    print(niceLooks('Ex', '$ ', format(ex_usd)))
-    print(niceLooks('Quantity', 'T ', format(quantity)))
-    print(niceLooks('FOB', '$ ', format(fob)))
-    print(niceLooks('FOB & Duty', '$ ', format(fob_duty)))
+    print(niceLooks('Todays Rate', '$ ', rate))
+    print(niceLooks('Ex', '$ ', ex_usd))
+    print(niceLooks('Quantity', 'T ', quantity))
+    print(niceLooks('FOB', '$ ', fob))
+    print(niceLooks('FOB & Duty', '$ ', fob_duty))
     print(printExTotal)
     print(printFobTotal)
 
 
     def save_db():
-        os.chdir('/Users/Han/Desktop/test')
+        os.chdir('/Users/han/Desktop/test')
         cwd = os.getcwd()
         location = input('Ex works location: ').lower()
         note = input('Note: ')
@@ -119,7 +119,7 @@ def printing():
         filename = 'invoice.csv'
         with open(filename, 'a') as csvfile:
             csvwriter = csv.writer(csvfile, delimiter='\t')
-            # csvwriter.writerow(h1)
+            csvwriter.writerow(h1)
             csvwriter.writerow(DATA)
     saveCSV = input('Save info: ').lower()
     if saveCSV in yes:
