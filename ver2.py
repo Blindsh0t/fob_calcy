@@ -37,7 +37,7 @@ def forex():
         return rate
 
     def offline():
-        os.chdir('/Users/hardikpatel/Desktop/test')
+        os.chdir('/Users/han/Desktop/test')
         with open('invoice.csv') as invoice:
             for rate_invoice in invoice:
                 rate_invoice = rate_invoice.split('\t')
